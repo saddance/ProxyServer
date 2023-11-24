@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  proxy_server:
+    build: .
+    ports:
+      - "7000-7020:7000-7020"
