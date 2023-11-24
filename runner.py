@@ -38,8 +38,7 @@ def run_socks5_proxy(config):
         password=config.get("password")
     )
 
-    with open("proxy.txt", "a") as f:
-        # write host, port, username, password to file
+    with open("/usr/src/app/data/proxy.txt", "a") as f:
         f.write(f"{config['host']}:{config['port']}:{config.get('username')}:{config.get('password')}\n")
 
     server.serve_forever()
