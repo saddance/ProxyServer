@@ -11,7 +11,7 @@ COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Make port available to the world outside this container
-EXPOSE 8000-8999
+EXPOSE 7000-7020
 
 # Run script when the container launches
 CMD ["python", "./runner.py"]

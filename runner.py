@@ -38,7 +38,10 @@ def run_socks5_proxy(config):
         password=config.get("password")
     )
 
-    print(f"Starting SOCKS5 proxy server on {config['host']}:{config['port']}")
+    with open("proxy.txt", "a") as f:
+        # write host, port, username, password to file
+        f.write(f"{config['host']}:{config['port']}:{config.get('username')}:{config.get('password')}\n")
+
     server.serve_forever()
 
 
@@ -58,4 +61,4 @@ def run_proxies_in_range(start_port, end_port, require_auth=False, max_threads=8
 
 
 # Example usage: Set up proxies on ports 8000 to 8010
-run_proxies_in_range(8000, 8010, require_auth=False)
+run_proxies_in_range(7000, 7020, require_auth=True)
