@@ -5,3 +5,5 @@ services:
     build: .
     ports:
       - "7000-7020:7000-7020"
+    volumes:
+      - ./data:/usr/src/app/data
